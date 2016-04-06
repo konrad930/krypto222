@@ -204,25 +204,5 @@ public class Main{
 
     }
 
-    private static byte[] encryptMessage(byte[] message, Key key, byte[] iv) throws Exception{
-
-        byte[] everything = message;
-        Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding","BC");
-        cipher.init(Cipher.ENCRYPT_MODE, key, new IvParameterSpec(iv));
-        byte[] encrypted = (cipher.doFinal(everything));
-
-        try {
-            FileOutputStream fop = new FileOutputStream(new File("/Users/kgb/Desktop/C"));
-            fop.write(encrypted);
-            fop.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return encrypted;
-    }
-
-
-
-
 }
 
